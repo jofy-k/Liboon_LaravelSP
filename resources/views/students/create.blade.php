@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal | Students</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Portal | Add Student</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-
     <nav class="py-3 bg-neutral-primary shadow-md">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a class="navbar-brand px-4" href="/"><span
@@ -34,39 +34,6 @@
             </div>
         </div>
     </nav>
-
-    <h1 class="text-center text-4xl pt-8">Students List</h1>
-    <div class="py-8">
-        <table class="w-full border-collapse border border-gray-400 bg-white text-sm">
-            <thead>
-                <tr>
-                    <th class="border border-gray-300 ...">ID</th>
-                    <th class="border border-gray-300 ...">Name</th>
-                    <th class="border border-gray-300 ...">Course</th>
-                    <th class="border border-gray-300 ...">Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($samples as $sample)
-                    <tr>
-                        <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['id'] }}</p>
-                        </td>
-                        <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['name'] }}</p>
-                        </td>
-                        <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['course'] }}</p>
-                        </td>
-                        <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['year'] }}</p>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-
 </body>
 
 </html>
