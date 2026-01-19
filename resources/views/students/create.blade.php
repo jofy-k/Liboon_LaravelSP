@@ -1,39 +1,32 @@
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Student Portal | Add Student</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
-    <nav class="py-3 bg-neutral-primary shadow-md">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a class="navbar-brand px-4" href="/"><span
-                    class="self-center text-xl text-heading font-semibold">Student Portal</span></a>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
-                    <li>
-                        <a href="/home"
-                            class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">Home</a>
-                    </li>
-                    <li>
-                        <a href="/students"
-                            class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">Students
-                            List</a>
-                    </li>
-                    <li>
-                        <a href="/students/create"
-                            class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">Add
-                            Student</a>
-                    </li>
-                </ul>
-            </div>
+@extends('components.layout')
+<title>Create New Student - Student Portal</title>
+@section('contents')
+<div class="py-8">
+   <div class="max-w-4xl mx-auto p-6 bg-white rounded-lg border border-gray-300">
+   <h1 class="text-3xl font-bold mb-4 text-center">New Student</h1>
+    
+    <form method="POST" action="/students">
+        @csrf
+        
+        <div class="form-group">
+            <label class="block text-gray-700 font-bold mb-2" for="name">Name:</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" type="text" id="name" name="name" required>
         </div>
-    </nav>
-</body>
-
-</html>
+        
+        <div class="form-group">
+            <label class="block text-gray-700 font-bold mb-2" for="course">Course:</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" type="text" id="course" name="course" required>
+        </div>
+        
+        <div class="form-group">
+            <label class="block text-gray-700 font-bold mb-2" for="year">Year:</label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" type="number" id="year" name="year" required>
+        </div>
+        
+        <div class ="flex justify-center pt-5">
+        <a href="/students" class="btn border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2" >Create Student</a>
+        <div>
+    </form>
+</div>
+</div>
+@endsection

@@ -1,41 +1,18 @@
-<html lang="en">
+@extends('components.layout')
+<title>Students List - Student Portal</title>
+@section('contents')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal | Students</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body>
-
-    <nav class="py-3 bg-neutral-primary shadow-md">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a class="navbar-brand px-4" href="/"><span
-                    class="self-center text-xl text-heading font-semibold">Student Portal</span></a>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul
-                    class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
-                    <li>
-                        <a href="/home"
-                            class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">Home</a>
-                    </li>
-                    <li>
-                        <a href="/students"
-                            class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">Students
-                            List</a>
-                    </li>
-                    <li>
-                        <a href="/students/create"
-                            class="block py-2 px-3 text-black bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">Add
-                            Student</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<div class="container mx-auto px-4">
     <h1 class="text-center text-4xl pt-8">Students List</h1>
+
+<div class="flex justify-center">
+    <button class="btn border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 mt-8">
+        <a href="/students/create">Add New Student</a>
+    </button>
+</div>
+
+</div>
+
     <div class="py-8">
         <table class="w-full border-collapse border border-gray-400 bg-white text-sm">
             <thead>
@@ -44,9 +21,11 @@
                     <th class="border border-gray-300 ...">Name</th>
                     <th class="border border-gray-300 ...">Course</th>
                     <th class="border border-gray-300 ...">Year</th>
+                    <th class="border border-gray-300 ...">Actions</th>
                 </tr>
             </thead>
             <tbody>
+                
                 @foreach ($samples as $sample)
                     <tr>
                         <td class="border border-gray-300 p-4">
@@ -61,12 +40,14 @@
                         <td class="border border-gray-300 p-4">
                             <p class="text-center">{{ $sample['year'] }}</p>
                         </td>
+                        
+                    <x-card :view="url('/students/'. $sample['id'] .'/view')" :edit="url('/students/'. $sample['id'] .'/edit')">
+                    </x-card>
+
                     </tr>
                 @endforeach
+
             </tbody>
         </table>
     </div>
-
-</body>
-
-</html>
+@endsection
