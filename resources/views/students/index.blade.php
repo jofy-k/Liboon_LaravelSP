@@ -26,22 +26,22 @@
             </thead>
             <tbody>
                 
-                @foreach ($samples as $sample)
+                @foreach ($students as $student)
                     <tr>
                         <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['id'] }}</p>
+                            <p class="text-center">{{ $student->id }}</p>
                         </td>
                         <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['name'] }}</p>
+                            <p class="text-center">{{ $student->name }}</p>
                         </td>
                         <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['course'] }}</p>
+                            <p class="text-center">{{ $student->course }}</p>
                         </td>
                         <td class="border border-gray-300 p-4">
-                            <p class="text-center">{{ $sample['year'] }}</p>
+                            <p class="text-center">{{ $student->year }}</p>
                         </td>
                         
-                    <x-card :view="url('/students/'. $sample['id'] .'/view')" :edit="url('/students/'. $sample['id'] .'/edit')">
+                    <x-card :view="url('/students/'. $student->id .'/view')" :edit="url('/students/'. $student->id .'/edit')">
                     </x-card>
 
                     </tr>

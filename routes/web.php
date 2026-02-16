@@ -10,25 +10,10 @@ Route::get('/', function () {
 
 Route::post('/students', [StudentController::class, 'store']);
 
-Route::get('/students', function () {
-    $samples = Student::all();
+Route::get('/students', [StudentController::class, 'index']);
 
-    return view('students.index', ["samples" => $samples]);
-});
+Route::get('/students/{id}/show', [StudentController::class, 'show']);
 
-Route::get('/students/{id}/view', function ($id) {
-    $samples = Student::all();
+Route::get('/students/{id}/edit', [StudentController::class, 'edit']);
 
-    return view('students.show', ["id" => $id, "samples" => $samples]);
-});
-
-Route::get('/students/{id}/edit', function ($id) {
-    $samples = Student::all();
-    
-     return view('students.edit', ["id" => $id, "samples" => $samples]);
-});
-
-
-Route::get('/students/create', function () {
-    return view('students.create');
-});
+Route::get('/students/create', [StudentController::class, 'create']);

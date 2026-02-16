@@ -1,4 +1,4 @@
-@props(['edit' => '#', 'view' => '#'])
+@props(['edit' => '#', 'show' => '#'])
 
 <td class="border border-gray-300 p-6">
     
@@ -6,7 +6,7 @@
 
 <div class="flex justify-center">
     <div class="pr-2">
-    <a href="{{ $view }}" class="btn border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2 mt-4 hover:bg-blue-600 hover:border-blue-600">
+    <a href="{{ $show }}" class="btn border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2 mt-4 hover:bg-blue-600 hover:border-blue-600">
         View
     </a>
     </div>
