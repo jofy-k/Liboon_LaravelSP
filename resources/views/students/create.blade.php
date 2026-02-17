@@ -24,8 +24,8 @@
         </div>
         
         <div class ="flex justify-center pt-5">
-        <a href="/students" class="btn border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2" >Create Student</a>
-        <div>
+            <button type="submit" class="btn border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2">Create Student</button>
+        </div>
     </form>
 </div>
 </div>

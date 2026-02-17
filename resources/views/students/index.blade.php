@@ -41,7 +41,7 @@
                             <p class="text-center">{{ $student->year }}</p>
                         </td>
                         
-                    <x-card :view="url('/students/'. $student->id .'/view')" :edit="url('/students/'. $student->id .'/edit')">
+                    <x-card :show="url('/students/'. $student->id .'/show')" :edit="url('/students/'. $student->id .'/edit')">
                     </x-card>
 
                     </tr>
