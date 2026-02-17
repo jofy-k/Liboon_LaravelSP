@@ -12,7 +12,7 @@ class StudentController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'course' => 'required|string|max:255',
-            'year' => 'required|integer|min:1|max:4',
+            'year' => 'required|integer|min:1|max:5',
         ]);
 
         Student::create($validated);
@@ -27,7 +27,7 @@ class StudentController extends Controller
      return view ('students.index' , [ 'students' => $student]);
     }
 
-    public function show ($id){
+    public function show ($id){ 
         //route --> students.show views
         $student = Student::findOrFail($id);
 
@@ -43,10 +43,10 @@ class StudentController extends Controller
 
     public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        $validated = $request->validate([ 
             'name' => 'required|string|max:255',
             'course' => 'required|string|max:255',
-            'year' => 'required|integer|min:1|max:4',
+            'year' => 'required|integer|min:1|max:5',
         ]);
 
         $student = Student::findOrFail($id);

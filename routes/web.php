@@ -18,4 +18,4 @@ Route::get('/students/{id}/show', [StudentController::class, 'show']);
 
 Route::get('/students/{id}/edit', [StudentController::class, 'edit']);
 
-Route::put('/students/{id}', [StudentController::class, 'update']);
+Route::put('/students/{id}', [StudentController::class, 'update']); 

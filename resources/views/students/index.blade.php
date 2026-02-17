@@ -44,7 +44,7 @@
                     <x-card :show="url('/students/'. $student->id .'/show')" :edit="url('/students/'. $student->id .'/edit')">
                     </x-card>
 
-                    </tr>
+                    </tr> 
                 @endforeach
 
             </tbody>

@@ -24,7 +24,7 @@
                 <a href="/students" class="btn border border-gray-500 bg-gray-500 text-white rounded-md px-4 py-2">Cancel</a>
             </div>
         </form>
-    </div>
+    </div> 
 </div>
 
 @endsection

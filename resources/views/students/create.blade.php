@@ -18,7 +18,7 @@
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" type="text" id="course" name="course" required>
         </div>
         
-        <div class="form-group">
+        <div class="form-group"> 
             <label class="block text-gray-700 font-bold mb-2" for="year">Year:</label>
             <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight" type="number" id="year" name="year" required>
         </div>
